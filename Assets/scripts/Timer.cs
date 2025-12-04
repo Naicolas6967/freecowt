@@ -7,6 +7,8 @@ public class Timer : MonoBehaviour
     [SerializeField] TextMeshProUGUI textoTimer;
     [SerializeField] float tempoRestante;
 
+    public bool acabou = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +23,8 @@ public class Timer : MonoBehaviour
     tempoRestante = 0;
     //CabouOJogo();
     textoTimer.color = Color.yellow;
+    acabou = true;
+    Time.timeScale = 0;
 
     }
 int minutos = Mathf.FloorToInt(tempoRestante / 60);
@@ -30,3 +34,5 @@ textoTimer.text = string.Format("{0:00}:{1:00}", minutos, segundos);
 
     }
 }
+
+
